@@ -1,0 +1,23 @@
+@(users : Seq[User])(implicit request: RequestHeader)
+
+<div class="user-display" >
+    <fieldset>
+        <legend align="center"><h3>Registered Users</h3></legend>
+        <table cellspacing="20">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+            @for(user <- users){
+            <tr>
+                <td>@user.firstname</td>
+                <td>@user.lastname</td>
+                <td>@user.email</td>
+                <td>@user.mobile</td>
+            </tr>
+            }
+        </table>
+    </fieldset>
+</div>

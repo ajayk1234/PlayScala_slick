@@ -1,0 +1,12 @@
+@(userForm: Form[UserData])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@helper.form(action = routes.HomeController.addUserToDB ) {
+@helper.CSRF.formField
+@helper.inputText(userForm("firstname"))
+@helper.inputText(userForm("lastname"))
+@helper.inputText(userForm("email"))
+@helper.inputText(userForm("mobile"))
+@helper.inputText(userForm("username"))
+@helper.inputPassword(userForm("password"))
+<button type="submit" name="action" value="edit">ADD</button>
+}
